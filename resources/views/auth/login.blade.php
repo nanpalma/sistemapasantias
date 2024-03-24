@@ -103,7 +103,7 @@
             <div class="auth-logo">
                 <a href="index.html"><img src="{{ asset('assets_use/compiled/svg/logo.svg') }}" alt="Logo"></a>
             </div>
-            <h1 class="auth-title">Iniciar Sesión nancy</h1>
+            <h1 class="auth-title">Iniciar Sesión</h1>
             <p class="auth-subtitle mb-5">Inicie sesión con los datos que ingresó durante el registro.</p>
 
             <form method="POST" action="{{ route('login') }}">

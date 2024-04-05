@@ -1,14 +1,14 @@
-let choices = document.querySelectorAll(".choices")
-let initChoice
+let choices = document.querySelectorAll('.choices');
+let initChoice;
 for (let i = 0; i < choices.length; i++) {
-  if (choices[i].classList.contains("multiple-remove")) {
+  if (choices[i].classList.contains('multiple-remove')) {
     initChoice = new Choices(choices[i], {
-      delimiter: ",",
+      delimiter: ',',
       editItems: true,
       maxItemCount: -1,
-      removeItemButton: true,
-    })
+      removeItemButton: true
+    });
   } else {
-    initChoice = new Choices(choices[i])
+    initChoice = new Choices(choices[i]);
   }
 }

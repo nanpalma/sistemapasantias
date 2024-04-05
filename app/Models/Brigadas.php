@@ -14,8 +14,13 @@ class Brigadas extends Model
     'direccion',
   ];
 
-  public function sub_brigadas()
+  public function subbrigada()
   {
     return $this->hasMany(SubBrigadas::class);
+  }
+
+  public function stock()
+  {
+    return $this->hasMany(Stock::class);
   }
 }

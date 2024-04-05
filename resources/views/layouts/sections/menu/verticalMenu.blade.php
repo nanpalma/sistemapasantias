@@ -84,14 +84,14 @@
           <ul class="submenu ">
 
             <li class="submenu-item  ">
-              <a href="{{route('armamento.list')}}" class="submenu-link">Armas</a>
+              <a href="{{route('armamento.list')}}" class="submenu-link">Materiales</a>
 
             </li>
 
-            {{-- <li class="submenu-item  ">
-              <a href="extra-component-divider.html" class="submenu-link">Divider</a>
+            <li class="submenu-item  ">
+              <a href="{{route('armamento.gestion')}}" class="submenu-link">Gestion</a>
 
-            </li> --}}
+            </li>
 
 
           </ul>

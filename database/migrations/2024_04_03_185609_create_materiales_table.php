@@ -11,12 +11,10 @@ return new class extends Migration
    */
   public function up(): void
   {
-    Schema::create('sub_brigadas', function (Blueprint $table) {
+    Schema::create('materiales', function (Blueprint $table) {
       $table->id();
       $table->string("nombre")->nullable();
-      $table->unsignedBigInteger('brigadas_id');
-      $table->foreign('brigadas_id')->references('id')->on('brigadas');
-      $table->boolean("status")->default(1);
+      $table->unsignedBigInteger('tipo_material_id');
       $table->timestamps();
     });
   }
@@ -26,6 +24,6 @@ return new class extends Migration
    */
   public function down(): void
   {
-    Schema::dropIfExists('sub_brigadas');
+    Schema::dropIfExists('materiales');
   }
 };

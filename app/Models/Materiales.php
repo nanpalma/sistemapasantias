@@ -5,17 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SubBrigadas extends Model
+class Materiales extends Model
 {
   use HasFactory;
+
   protected $fillable = [
     'nombre',
-    'brigadas_id',
-    'status',
+    'tipo_material_id',
   ];
-
-  public function brigada()
-  {
-    return $this->belongsTo(Brigadas::class);
-  }
 }

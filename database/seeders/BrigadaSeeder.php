@@ -44,43 +44,43 @@ class BrigadaSeeder extends Seeder
     $Subbrigadas = [
       [
         "nombre" => "141 Batallón de infanteria 'Segundo riera'",
-        "brigada_id" => 1,
+        "brigadas_id" => 1,
       ], [
         "nombre" => "142 Batallón de blindado 'Juan Gillermos Iribarren'",
-        "brigada_id" => 1,
+        "brigadas_id" => 1,
       ], [
         "nombre" => "143 Batallón de Infontering Girardot",
-        "brigada_id" => 1,
+        "brigadas_id" => 1,
       ], [
         "nombre" => "145 Batallón Cruz Carrillo",
-        "brigada_id" => 1,
+        "brigadas_id" => 1,
       ], [
         "nombre" => "814 Batallón de apoyo logístico",
-        "brigada_id" => 2,
+        "brigadas_id" => 2,
       ], [
         "nombre" => "941 Batallon 'Manuel Sedeño'",
-        "brigada_id" => 3,
+        "brigadas_id" => 3,
       ], [
         "nombre" => "942 Batallón 'GNA Antonio Jose De Sucre'",
-        "brigada_id" => 3,
+        "brigadas_id" => 3,
       ], [
         "nombre" => "943 Batallón 'Juan Bautista'",
-        "brigada_id" => 3,
+        "brigadas_id" => 3,
       ], [
         "nombre" => "Detacamento 121",
-        "brigada_id" => 4,
+        "brigadas_id" => 4,
       ], [
         "nombre" => "Destacamento 122",
-        "brigada_id" => 4,
+        "brigadas_id" => 4,
       ], [
         "nombre" => "Destacamento 123",
-        "brigada_id" => 4,
+        "brigadas_id" => 4,
       ], [
         "nombre" => "DESUL",
-        "brigada_id" => 4,
+        "brigadas_id" => 4,
       ], [
         "nombre" => "Comando Rurales Nº 12",
-        "brigada_id" => 4,
+        "brigadas_id" => 4,
       ]
     ];
 

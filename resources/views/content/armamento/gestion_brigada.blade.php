@@ -136,7 +136,7 @@
                       <td class="text-center">{{$value->operativo <= 0 ?"--":$value->operativo}}</td>
                       <td class="text-center">{{$value->inoperativo <= 0 ?"--":$value->inoperativo}}</td>
                       <td>
-                          <p class="mb-0">lksn knsañ flnñ snfñl faskln</p>
+                          <p class="mb-0">{{$value->observacion}}</p>
                       </td>
                       @if ($a)
                       <td class="text-end">

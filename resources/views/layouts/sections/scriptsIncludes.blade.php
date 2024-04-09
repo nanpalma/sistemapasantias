@@ -8,4 +8,4 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script> --}}
 
 
-<script src="{{ asset('assets_use/static/js/initTheme.js') }}"></script>
+<script src="{{ asset('public/assets_use/static/js/initTheme.js') }}"></script>

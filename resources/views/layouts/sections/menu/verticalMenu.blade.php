@@ -109,7 +109,7 @@
           <ul class="submenu ">
 
             <li class="submenu-item  ">
-              <a href="component-accordion.html" class="submenu-link">Accordion</a>
+              <a href="{{route('transporte.list')}}" class="submenu-link">Vehículos</a>
 
             </li>
 

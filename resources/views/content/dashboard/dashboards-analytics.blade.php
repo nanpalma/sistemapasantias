@@ -9,8 +9,8 @@
 @section('vendor-script')
 {{-- <script src="{{asset('assets/vendor/libs/apex-charts/apexcharts.js')}}"></script> --}}
 
-<script src="{{ asset('assets_use/extensions/apexcharts/apexcharts.min.js') }}"></script>
-<script src="{{ asset('assets_use/static/js/pages/dashboard.js') }}"></script>
+<script src="{{ asset('public/assets_use/extensions/apexcharts/apexcharts.min.js') }}"></script>
+<script src="{{ asset('public/assets_use/static/js/pages/dashboard.js') }}"></script>
 @endsection
 
 @section('page-script')
@@ -241,7 +241,7 @@
         <div class="card-content pb-4">
           <div class="recent-message d-flex px-4 py-3">
             <div class="avatar avatar-lg">
-              <img src="{{asset('assets_use/compiled/jpg/4.jpg')}}">
+              <img src="{{asset('public/assets_use/compiled/jpg/4.jpg')}}">
             </div>
             <div class="name ms-4">
               <h5 class="mb-1">Hank Schrader</h5>

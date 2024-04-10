@@ -77,9 +77,10 @@ function list_material() {
           <thead>
             <tr>
               <th>#ID</th>
-              <th>NOMBRE</th>
-              <th>PLACA</th>
-              <th>MODELO</th>
+              <th>VEHÍCULO DE TRASPORTE
+              SISTEMA BLINDADOS Y SISTEMAS DE ARTILLERÍA</th>
+              <th>SERIAL O PLACA </th>
+              <th>TIPO</th>
               <th class="text-end"></th>
             </tr>
           </thead>
@@ -94,9 +95,9 @@ function list_material() {
         <thead>
           <tr>
             <th>#ID</th>
-            <th>NOMBRE</th>
-            <th>PLACA</th>
-            <th>MODELO</th>
+            <th>VEHÍCULO DE TRASPORTE SISTEMA BLINDADOS Y SISTEMAS DE ARTILLERÍA</th>
+            <th>SERIAL O PLACA </th>
+            <th>TIPO</th>
             <th class="text-end"></th>
           </tr>
         </thead>

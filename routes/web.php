@@ -34,6 +34,12 @@ Route::middleware(['auth', 'verified',])->group(function () {
   Route::delete('/blindado-transporte/vehiculos/delet/{id}', [App\Http\Controllers\DepTransporteController::class, 'delete_vehiculo'])->name('transporte.vehiculos.delete');
   Route::get('/blindado-transporte/vehiculos/list', [App\Http\Controllers\DepTransporteController::class, 'list_vehiculo'])->name('transporte.vehiculos.list');
   Route::get('/blindado-transporte/vehiculos/edit/{id}', [App\Http\Controllers\DepTransporteController::class, 'edit_vehiculo'])->name('transporte.vehiculos.edit');
+
+  Route::get('/blindado-transporte/gestion', [App\Http\Controllers\DepTransporteController::class, 'gestion'])->name('transporte.gestion');
+  Route::get('/blindado-transporte/gestion/views', [App\Http\Controllers\DepTransporteController::class, 'brigada_views'])->name('transporte.gestion.views');
+  Route::get('/blindado-transporte/vehiculo/list', [App\Http\Controllers\DepTransporteController::class, 'list_select_vehiculo'])->name('transporte.vehiculo.list');
+  Route::post('/blindado-transporte/gestion/store', [App\Http\Controllers\DepTransporteController::class, 'store_gestion_stock'])->name('transporte.gestion.store');
+  Route::delete('/blindado-transporte/gestion/delet_stock/{id}', [App\Http\Controllers\DepTransporteController::class, 'delete_material_stock'])->name('transporte.gestion.delete');
   /**_----------------------------------------End Blindado y Transporte_---------------------------------------- */
 
   Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

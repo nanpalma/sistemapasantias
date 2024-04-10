@@ -165,7 +165,7 @@ class DepArmamentoController extends Controller
         $arrayData =   $stocks;
       } else {
         $tipo_material = 2;
-        $stocks = Stock::select('brigadas_id', 'materiale_id')->whereHas('material', function ($query) use ($tipo_material) {
+        $stocks = Stock::select('brigadas_id', 'materiale_id', 'observacion')->whereHas('material', function ($query) use ($tipo_material) {
           $query->where('tipo_material_id', $tipo_material);
         })
           ->selectRaw('SUM(toe) as toe')
@@ -173,12 +173,12 @@ class DepArmamentoController extends Controller
           ->selectRaw('SUM(faltan) as faltan')
           ->selectRaw('SUM(operativo) as operativo')
           ->selectRaw('SUM(inoperativo) as inoperativo')
-          ->groupBy('brigadas_id', 'materiale_id')->where('brigadas_id', $brigada_id)
+          ->groupBy('brigadas_id', 'materiale_id', 'observacion')->where('brigadas_id', $brigada_id)
           ->get();
         $arrayData =   $stocks;
 
         $tipo_material = 1;
-        $arrayData2 = Stock::select('brigadas_id', 'materiale_id')->whereHas('material', function ($query) use ($tipo_material) {
+        $arrayData2 = Stock::select('brigadas_id', 'materiale_id', 'observacion')->whereHas('material', function ($query) use ($tipo_material) {
           $query->where('tipo_material_id', $tipo_material);
         })
           ->selectRaw('SUM(toe) as toe')
@@ -186,7 +186,7 @@ class DepArmamentoController extends Controller
           ->selectRaw('SUM(faltan) as faltan')
           ->selectRaw('SUM(operativo) as operativo')
           ->selectRaw('SUM(inoperativo) as inoperativo')
-          ->groupBy('brigadas_id', 'materiale_id')->where('brigadas_id', $brigada_id)
+          ->groupBy('brigadas_id', 'materiale_id', 'observacion')->where('brigadas_id', $brigada_id)
           ->get();
       }
 

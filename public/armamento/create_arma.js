@@ -121,8 +121,28 @@ function list_material() {
       $('#table1').DataTable({
         responsive: true,
         language: {
-          searchPlaceholder: 'Buscar...',
-          sSearch: ''
+          decimal: '',
+          emptyTable: 'No hay datos disponibles en la tabla',
+          info: 'Mostrando _START_ a _END_ de _TOTAL_ entradas',
+          infoEmpty: 'Mostrando 0 a 0 de 0 entradas',
+          infoFiltered: '(filtrado de un total de _MAX_ entradas)',
+          infoPostFix: '',
+          thousands: ',',
+          lengthMenu: 'Mostrar _MENU_ entradas',
+          loadingRecords: 'Cargando...',
+          processing: 'Procesando...',
+          search: 'Buscar:',
+          zeroRecords: 'No se encontraron registros coincidentes',
+          paginate: {
+            first: 'Primero',
+            last: 'Último',
+            next: 'Siguiente',
+            previous: 'Anterior'
+          },
+          aria: {
+            sortAscending: ': activar para ordenar la columna ascendente',
+            sortDescending: ': activar para ordenar la columna descendente'
+          }
         }
       });
       // $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });

@@ -117,7 +117,7 @@ function list_material(id = '') {
       const resp = await axios.get(base_url() + '/departamento/material/list');
       console.log(resp.data);
       var cadena = '';
-      cadena += '<option value="">Seleccionar material</option>';
+      // cadena += '<option value="">Seleccionar material</option>';
       for (let i = 0; i < resp.data.length; i++) {
         if (resp.data[i].id === id) {
           cadena += '<option selected value="' + resp.data[i].id + '">' + resp.data[i].nombre + ' </option>';
@@ -143,7 +143,7 @@ function list_area(id = '') {
       const resp = await axios.get(base_url() + '/departamento/sub_brigadas/list/' + id_brigada);
       console.log(resp.data);
       var cadena = '';
-      cadena += '<option value="">Seleccionar el area</option>';
+      // cadena += '<option value="">Seleccionar el area</option>';
       for (let i = 0; i < resp.data.length; i++) {
         if (resp.data[i].id === id) {
           cadena += '<option selected value="' + resp.data[i].id + '">' + resp.data[i].nombre + ' </option>';

@@ -296,8 +296,8 @@
                                 <div class="form-group mb-3">
                                     <label for="toe">TOE (Nesecitas)</label>
                                     <input type="number" value="0" id="toe"
-                                        class="form-control form-control-md inputValue" placeholder="Ingrese el toe"
-                                        name="toe">
+                                        class="form-control form-control-md inputValue not-number-negative"
+                                        placeholder="Ingrese el toe" name="toe">
                                     <div id="toe-error" class="invalid-feedback">
                                         <i class="bx bx-radio-circle"></i>
                                     </div>
@@ -308,8 +308,8 @@
                                 <div class="form-group mb-3">
                                     <label for="dotado">DOTADO (Lo que llega)</label>
                                     <input type="number" value="0" id="dotado"
-                                        class="form-control form-control-md inputValue" placeholder="Ingrese el dotado"
-                                        name="dotado">
+                                        class="form-control form-control-md inputValue not-number-negative"
+                                        placeholder="Ingrese el dotado" name="dotado">
                                     <div id="dotado-error" class="invalid-feedback">
                                         <i class="bx bx-radio-circle"></i>
                                     </div>
@@ -320,8 +320,8 @@
                                 <div class="form-group mb-3">
                                     <label for="faltan">FALTAN</label>
                                     <input type="number" value="0" readonly id="faltan"
-                                        class="form-control form-control-md " placeholder="Ingrese el faltan"
-                                        name="faltan">
+                                        class="form-control form-control-md  not-number-negative"
+                                        placeholder="Ingrese el faltan" name="faltan">
                                     <div id="faltan-error" class="invalid-feedback">
                                         <i class="bx bx-radio-circle"></i>
                                     </div>
@@ -332,8 +332,8 @@
                                 <div class="form-group mb-3">
                                     <label for="operativo">OPERATIVO</label>
                                     <input type="number" value="0" readonly id="operativo"
-                                        class="form-control form-control-md " placeholder="Ingrese el operativo"
-                                        name="operativo">
+                                        class="form-control form-control-md  not-number-negative"
+                                        placeholder="Ingrese el operativo" name="operativo">
                                     <div id="operativo-error" class="invalid-feedback">
                                         <i class="bx bx-radio-circle"></i>
                                     </div>
@@ -344,7 +344,7 @@
                                 <div class="form-group mb-3">
                                     <label for="inoperativo">INOPERATIVO</label>
                                     <input type="number" value="0" id="inoperativo"
-                                        class="form-control form-control-md inputValue"
+                                        class="form-control form-control-md inputValue not-number-negative"
                                         placeholder="Ingrese el inoperativo" name="inoperativo">
                                     <div id="inoperativo-error" class="invalid-feedback">
                                         <i class="bx bx-radio-circle"></i>
@@ -405,5 +405,6 @@
     <script src="{{ asset('js/axios.min.js') }}"></script>
     <script src="{{ asset('js/general.js') }}"></script>
     <script src="{{ asset('armamento/gestion_brigada.js') }}"></script>
+
 
 @endsection

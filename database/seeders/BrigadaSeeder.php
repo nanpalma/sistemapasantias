@@ -49,7 +49,7 @@ class BrigadaSeeder extends Seeder
         "nombre" => "142 Batallón de blindado 'Juan Gillermos Iribarren'",
         "brigadas_id" => 1,
       ], [
-        "nombre" => "143 Batallón de Infontering Girardot",
+        "nombre" => "CIA-1401 Comando",
         "brigadas_id" => 1,
       ], [
         "nombre" => "145 Batallón Cruz Carrillo",

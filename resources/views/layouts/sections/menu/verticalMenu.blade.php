@@ -130,7 +130,7 @@
                         </li>
 
                         <li class="submenu-item  ">
-                            <a href="{{ route('transporte.gestion') }}" class="submenu-link">Gestión de
+                            <a href="{{ route('transporte.gestion') }}" class="submenu-link">Gestión de Blindado y
                                 transporte</a>
 
                         </li>

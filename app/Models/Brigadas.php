@@ -23,4 +23,9 @@ class Brigadas extends Model
   {
     return $this->hasMany(Stock::class);
   }
+
+  public function stocktransporte()
+  {
+    return $this->hasMany(StockTransporte::class);
+  }
 }

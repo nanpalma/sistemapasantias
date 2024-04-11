@@ -182,7 +182,7 @@ function editMaterial(id) {
   console.log(id);
   const sendGetRequest = async () => {
     try {
-      const resp = await axios.get(base_url() + '/departamento/gestion/edit/' + id);
+      const resp = await axios.get(base_url() + '/blindado-transporte/gestion/edit/' + id);
       console.log(resp.data);
       $('#addModalMaterial').click();
       $('.ocult_elemet').hide();
@@ -190,13 +190,11 @@ function editMaterial(id) {
       $('#id').val(resp.data.id);
       $('#brigadas_id').val(resp.data.brigadas_id);
 
-      $('#materiale_id').val(resp.data.materiale_id).trigger('change');
-      $('#sub_brigada_id').val(resp.data.sub_brigada_id);
-      $('#toe').val(resp.data.toe);
-      $('#dotado').val(resp.data.dotado);
-      $('#faltan').val(resp.data.faltan);
-      $('#operativo').val(resp.data.operativo);
-      $('#inoperativo').val(resp.data.inoperativo);
+      $('#vehiculo_id').val(resp.data.vehiculo_id).trigger('change');
+      $('#flexRadioDefault1').prop('checked', resp.data.operativo);
+      $('#flexRadioDefault2').prop('checked', resp.data.reparado);
+      $('#flexRadioDefault3').prop('checked', resp.data.inoperativo);
+
       $('#observacion').val(resp.data.observacion);
     } catch (err) {
       // Handle Error Here

@@ -67,7 +67,8 @@ class DepTransporteController extends Controller
 
   public function gestion()
   {
-    $brigadas = Brigadas::with('subbrigada')->get();
+    $brigadas = Brigadas::with('subbrigada', 'stocktransporte.vehiculos')->get();
+    // return response()->json($brigadas);
     return view('content.transporte.gestion', compact('brigadas'));
   }
 
@@ -107,7 +108,7 @@ class DepTransporteController extends Controller
 
     if ($request->id == "") {
 
-      if (count(StockTransporte::where('vehiculo_id', $request->vehiculo_id)->where('brigadas_id', $request->brigadas_id)->get())) {
+      if (count(StockTransporte::where('vehiculo_id', $request->vehiculo_id)->get())) {
         return response()->json(['message' => "Error, ya el vehículo que deseas agregar se encuentra registrado.", "status" => 422], 201);
       }
     }
@@ -154,5 +155,11 @@ class DepTransporteController extends Controller
     return response()->json(['success' => 'Vehículo Eliminado Correctamente.', 'status' => 200,], 201);
     // }
 
+  }
+
+  public function edit_stock_vhiculos($id)
+  {
+    $data = StockTransporte::where('id', $id)->first();
+    return response($data);
   }
 }

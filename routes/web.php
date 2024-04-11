@@ -40,6 +40,7 @@ Route::middleware(['auth', 'verified',])->group(function () {
   Route::get('/blindado-transporte/vehiculo/list', [App\Http\Controllers\DepTransporteController::class, 'list_select_vehiculo'])->name('transporte.vehiculo.list');
   Route::post('/blindado-transporte/gestion/store', [App\Http\Controllers\DepTransporteController::class, 'store_gestion_stock'])->name('transporte.gestion.store');
   Route::delete('/blindado-transporte/gestion/delet_stock/{id}', [App\Http\Controllers\DepTransporteController::class, 'delete_material_stock'])->name('transporte.gestion.delete');
+  Route::get('/blindado-transporte/gestion/edit/{id}', [App\Http\Controllers\DepTransporteController::class, 'edit_stock_vhiculos'])->name('transporte.gestion.edit');
   /**_----------------------------------------End Blindado y Transporte_---------------------------------------- */
 
   Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

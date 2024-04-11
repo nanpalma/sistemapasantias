@@ -71,12 +71,11 @@
                                         </div>
                                         <div class="col-md-12">
                                             <ul class="list-group">
-                                                <li class="list-group-item active text-center">Áreas</li>
-                                                @forelse($brigada->subbrigada as $area)
-                                                    <li class="list-group-item "><i class="view-list-large"></i>
-                                                        {{ $area->nombre }}</li>
-                                                @empty
-                                                @endforelse
+                                                <li class="list-group-item active text-center">Total De Transporte</li>
+
+                                                <li class="list-group-item "><i class="view-list-large"></i>
+                                                    Total: {{ count($brigada->stocktransporte) }}</li>
+
                                             </ul>
                                         </div>
                                     </div>

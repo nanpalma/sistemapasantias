@@ -105,7 +105,7 @@
                         </li>
 
                         <li class="submenu-item  ">
-                            <a href="{{ route('armamento.gestion') }}" class="submenu-link">Gestion de Armamento</a>
+                            <a href="{{ route('armamento.gestion') }}" class="submenu-link">Gestion</a>
 
                         </li>
 

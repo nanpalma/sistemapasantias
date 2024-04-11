@@ -294,7 +294,7 @@
 
                             <div class="col-md-6 col-12">
                                 <div class="form-group mb-3">
-                                    <label for="toe">TOE (Nesecitas)</label>
+                                    <label for="toe">TOE</label>
                                     <input type="number" value="0" id="toe"
                                         class="form-control form-control-md inputValue not-number-negative"
                                         placeholder="Ingrese el toe" name="toe">
@@ -306,7 +306,7 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group mb-3">
-                                    <label for="dotado">DOTADO (Lo que llega)</label>
+                                    <label for="dotado">DOTADO</label>
                                     <input type="number" value="0" id="dotado"
                                         class="form-control form-control-md inputValue not-number-negative"
                                         placeholder="Ingrese el dotado" name="dotado">

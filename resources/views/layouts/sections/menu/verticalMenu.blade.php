@@ -123,7 +123,10 @@
                     </a>
 
                     <ul class="submenu ">
+                        <li class="submenu-item  ">
+                            <a href="{{ route('transporte.zodi.list') }}" class="submenu-link">Vehículos Zodi</a>
 
+                        </li>
                         <li class="submenu-item  ">
                             <a href="{{ route('transporte.list') }}" class="submenu-link">Vehículos</a>
 

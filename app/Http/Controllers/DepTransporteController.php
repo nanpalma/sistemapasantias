@@ -6,6 +6,7 @@ use App\Models\Brigadas;
 use App\Models\Stock;
 use App\Models\StockTransporte;
 use App\Models\Vehiculo;
+use App\Models\VehiculoZodi;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -14,6 +15,11 @@ class DepTransporteController extends Controller
   public function list_transporte()
   {
     return view('content.transporte.vehiculos');
+  }
+
+  public function list_transporte_zodi()
+  {
+    return view('content.transporte.zodi');
   }
 
   public function store_transporte(Request $request)
@@ -46,9 +52,76 @@ class DepTransporteController extends Controller
 
     return response()->json(['message' => "Vehículo {$accion} correctamente", "data" => $model], 201);
   }
+
+
+  public function store_transporte_zodi(Request $request)
+  {
+
+    $request->validate([
+      'marca' => 'required',
+      'modelo' => 'required',
+      'ubicacion' => 'required',
+      'color' => 'required',
+      'placa' =>
+      [
+        'required',
+        Rule::unique('vehiculo_zodis', 'placa')->ignore($request->id, 'id')
+      ],
+      'serial_chasis' =>
+      [
+        'required',
+        Rule::unique('vehiculo_zodis', 'serial_chasis')->ignore($request->id, 'id')
+      ],
+      'serial_motor' =>
+      [
+        'required',
+        Rule::unique('vehiculo_zodis', 'serial_motor')->ignore($request->id, 'id')
+      ],
+    ], [], [
+      'marca' => 'marca',
+      'modelo' => 'modelo',
+      'placa' => 'placa',
+      'serial_chasis' => 'serial del chasis',
+      'serial_motor' => 'serial del motor',
+      'ubicacion' => 'ubicación',
+      'color' => 'color',
+
+    ]);
+    if ($request->capa_ope == "operativo") {
+      $request['operativo'] = true;
+    } else {
+      $request['operativo']  = false;
+    }
+    if ($request->capa_ope == "inoperativo") {
+      $request['inoperativo'] = true;
+    } else {
+      $request['inoperativo'] = false;
+    }
+
+    // return response($request);
+
+    if ($request->id) {
+      $model = VehiculoZodi::findOrFail($request->id);
+      $accion = "Editado";
+    } else {
+      $model = new VehiculoZodi;
+      $accion = " Creado";
+    }
+
+    $model->fill($request->all());
+    $model->save();
+
+    return response()->json(['message' => "Vehículo {$accion} correctamente", "data" => $model], 201);
+  }
+
+
   public function list_vehiculo()
   {
     return response()->json(Vehiculo::all());
+  }
+  public function list_vehiculo_zodi()
+  {
+    return response()->json(VehiculoZodi::all());
   }
   public function delete_vehiculo(Request $request)
   {
@@ -59,9 +132,24 @@ class DepTransporteController extends Controller
 
   }
 
+  public function delete_vehiculo_zodi(Request $request)
+  {
+
+    VehiculoZodi::where('id', $request['id'])->delete();
+    return response()->json(['success' => 'Vehículo Eliminado Correctamente.', 'status' => 200,], 201);
+    // }
+
+  }
+
   public function edit_vehiculo($id)
   {
     $data = Vehiculo::where('id', $id)->first();
+    return response($data);
+  }
+
+  public function edit_vehiculo_zodi($id)
+  {
+    $data = VehiculoZodi::where('id', $id)->first();
     return response($data);
   }
 

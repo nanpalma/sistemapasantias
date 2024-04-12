@@ -41,6 +41,12 @@ Route::middleware(['auth', 'verified',])->group(function () {
   Route::post('/blindado-transporte/gestion/store', [App\Http\Controllers\DepTransporteController::class, 'store_gestion_stock'])->name('transporte.gestion.store');
   Route::delete('/blindado-transporte/gestion/delet_stock/{id}', [App\Http\Controllers\DepTransporteController::class, 'delete_material_stock'])->name('transporte.gestion.delete');
   Route::get('/blindado-transporte/gestion/edit/{id}', [App\Http\Controllers\DepTransporteController::class, 'edit_stock_vhiculos'])->name('transporte.gestion.edit');
+
+  Route::get('/blindado-transporte/zodi/list-vehiculos', [App\Http\Controllers\DepTransporteController::class, 'list_transporte_zodi'])->name('transporte.zodi.list');
+  Route::post('/blindado-transporte/vehiculoszodi/store', [App\Http\Controllers\DepTransporteController::class, 'store_transporte_zodi'])->name('transporte.vehiculoszodi.store');
+  Route::get('/blindado-transporte/vehiculoszosi/list', [App\Http\Controllers\DepTransporteController::class, 'list_vehiculo_zodi'])->name('transporte.vehiculoszodi.list');
+  Route::delete('/blindado-transporte/vehiculoszodi/delet/{id}', [App\Http\Controllers\DepTransporteController::class, 'delete_vehiculo_zodi'])->name('transporte.vehiculoszodi.delete');
+  Route::get('/blindado-transporte/vehiculoszodi/edit/{id}', [App\Http\Controllers\DepTransporteController::class, 'edit_vehiculo_zodi'])->name('transporte.vehiculoszodi.edit');
   /**_----------------------------------------End Blindado y Transporte_---------------------------------------- */
 
   Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

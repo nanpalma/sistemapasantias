@@ -124,7 +124,7 @@
 
                     <ul class="submenu ">
                         <li class="submenu-item  ">
-                            <a href="{{ route('transporte.zodi.list') }}" class="submenu-link">Vehículos Zodi</a>
+                            <a href="{{ route('transporte.zodi.list') }}" class="submenu-link">Vehículos ZODI</a>
 
                         </li>
                         <li class="submenu-item  ">
@@ -133,8 +133,7 @@
                         </li>
 
                         <li class="submenu-item  ">
-                            <a href="{{ route('transporte.gestion') }}" class="submenu-link">Gestión de Blindado y
-                                transporte</a>
+                            <a href="{{ route('transporte.gestion') }}" class="submenu-link">Gestión </a>
 
                         </li>
 

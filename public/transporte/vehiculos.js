@@ -33,14 +33,18 @@ $('#btn_add_material').on('click', e => {
       list_material();
       $('#formAddMaterial')[0].reset();
       $('#formAddMaterial').find('#id').val('');
+      $('#formAddMaterial')
+        .find('input:text, input:password, input:file, input:hidden  , input[name="email"],select, textarea')
+        .removeClass('is-invalid')
+        .removeClass('is-valid');
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // Error de formulario validacion
       if (xhr.status == 422) {
         // Elimina el mensaje de error de los campos que estan correctos
-        $('#formAdd').find('strong[id]').text('');
+        $('#formAddMaterial').find('strong[id]').text('');
         // Estilo de bootstrap para marcar que estan correctos los datos
-        $('#formAdd')
+        $('#formAddMaterial')
           .find('input:text, input:password, input:file, input:hidden  , input[name="email"],select, textarea')
           .removeClass('is-invalid')
           .addClass('is-valid');

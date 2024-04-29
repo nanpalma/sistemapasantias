@@ -109,7 +109,10 @@
 
                         </li>
 
+                        <li class="submenu-item  ">
+                            <a href="{{ route('armamentozody.list') }}" class="submenu-link">Materiales ZODI</a>
 
+                        </li>
                     </ul>
 
 

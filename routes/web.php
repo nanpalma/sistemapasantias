@@ -13,14 +13,19 @@ Route::middleware(['auth', 'verified',])->group(function () {
   /**_----------------------------------------Departamento de armamentos_---------------------------------------- */
   Route::get('/departamento/create-arma', [App\Http\Controllers\DepArmamentoController::class, 'create_arma'])->name('armamento.create');
   Route::get('/departamento/list-arma', [App\Http\Controllers\DepArmamentoController::class, 'list_arma'])->name('armamento.list');
+  Route::get('/departamento/zody/list-arma', [App\Http\Controllers\DepArmamentoController::class, 'list_arma_zody'])->name('armamentozody.list');
 
 
   Route::post('/departamento/material/store', [App\Http\Controllers\DepArmamentoController::class, 'store_material'])->name('armamento.material.store');
+  Route::post('/departamento/material/zody/store', [App\Http\Controllers\DepArmamentoController::class, 'store_material_zody'])->name('armamentozody.material.store');
 
   Route::get('/departamento/material/list', [App\Http\Controllers\DepArmamentoController::class, 'list_material'])->name('armamento.material.list');
+  Route::get('/departamento/material/zody/list', [App\Http\Controllers\DepArmamentoController::class, 'list_material_zody'])->name('armamentozody.material.list');
   Route::get('/departamento/sub_brigadas/list/{id}', [App\Http\Controllers\DepArmamentoController::class, 'list_sub_brigadas'])->name('armamento.material.list');
   Route::delete('/departamento/material/delet/{id}', [App\Http\Controllers\DepArmamentoController::class, 'delete_material'])->name('armamento.material.delete');
+  Route::delete('/departamento/material/zody/delet/{id}', [App\Http\Controllers\DepArmamentoController::class, 'delete_material_zody'])->name('armamentozody.material.delete');
   Route::get('/departamento/material/edit/{id}', [App\Http\Controllers\DepArmamentoController::class, 'edit_material'])->name('armamento.material.edit');
+  Route::get('/departamento/material/zody/edit/{id}', [App\Http\Controllers\DepArmamentoController::class, 'edit_material_zody'])->name('armamento.material.edit');
   Route::get('/departamento/gestion', [App\Http\Controllers\DepArmamentoController::class, 'gestion'])->name('armamento.gestion');
   Route::get('/departamento/gestion/views', [App\Http\Controllers\DepArmamentoController::class, 'brigada_views'])->name('armamento.gestion.views');
   Route::post('/departamento/gestion/store', [App\Http\Controllers\DepArmamentoController::class, 'store_gestion_stock'])->name('armamento.gestion.store');

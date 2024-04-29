@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brigadas;
 use App\Models\Materiales;
+use App\Models\MaterialesZody;
 use App\Models\Stock;
 use App\Models\SubBrigadas;
 use Illuminate\Http\Request;
@@ -19,6 +20,10 @@ class DepArmamentoController extends Controller
   {
     return view('content.armamento.list_armas');
   }
+  public function list_arma_zody()
+  {
+    return view('content.armamento.list_armas_zody');
+  }
 
   public function gestion()
   {
@@ -29,6 +34,10 @@ class DepArmamentoController extends Controller
   public function list_material()
   {
     return response()->json(Materiales::all());
+  }
+  public function list_material_zody()
+  {
+    return response()->json(MaterialesZody::all());
   }
 
   public function list_sub_brigadas($id)
@@ -52,6 +61,31 @@ class DepArmamentoController extends Controller
       $accion = "Editado";
     } else {
       $model = new Materiales;
+      $accion = " Creado";
+    }
+
+    $model->fill($request->all());
+    $model->save();
+
+    return response()->json(['message' => "Material {$accion} correctamente", "data" => $model], 201);
+  }
+
+  public function store_material_zody(Request $request)
+  {
+
+    $request->validate([
+      'nombre' => 'required',
+      'tipo_material_id' => 'required',
+    ], [], [
+      'nombre' => 'nombre',
+      'tipo_material_id' => 'tipo',
+    ]);
+
+    if ($request->id) {
+      $model = MaterialesZody::findOrFail($request->id);
+      $accion = "Editado";
+    } else {
+      $model = new MaterialesZody;
       $accion = " Creado";
     }
 
@@ -117,6 +151,15 @@ class DepArmamentoController extends Controller
 
   }
 
+  public function delete_material_zody(Request $request)
+  {
+
+    MaterialesZody::where('id', $request['id'])->delete();
+    return response()->json(['success' => 'Material Eliminado Correctamente.', 'status' => 200,], 201);
+    // }
+
+  }
+
   public function delete_material_stock(Request $request)
   {
 
@@ -129,6 +172,12 @@ class DepArmamentoController extends Controller
   public function edit_material($id)
   {
     $data = Materiales::where('id', $id)->first();
+    return response($data);
+  }
+
+  public function edit_material_zody($id)
+  {
+    $data = MaterialesZody::where('id', $id)->first();
     return response($data);
   }
 

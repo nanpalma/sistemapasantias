@@ -1,23 +1,6 @@
 $(document).ready(function () {
   list_material();
 });
-$('#inlineForm').on('hidden.bs.modal', function () {
-  console.log('El modal se está cerrando');
-  recet_input();
-  // Aquí puedes realizar las acciones que desees cuando el modal se cierre
-});
-$('#inlineForm').on('show.bs.modal', function () {
-  $('#formAddMaterial')
-    .find('input:text, input:password, input:file, input:hidden  , input[name="email"],select, textarea')
-    .removeClass('is-invalid')
-    .removeClass('is-valid');
-});
-function recet_input() {
-  $('#id').val('');
-  $('#modelo').val('');
-  $('#nombre').val('');
-  $('#placa').val('');
-}
 
 $('#btn_add_material').on('click', e => {
   e.preventDefault();
@@ -38,18 +21,14 @@ $('#btn_add_material').on('click', e => {
       list_material();
       $('#formAddMaterial')[0].reset();
       $('#formAddMaterial').find('#id').val('');
-      $('#formAddMaterial')
-        .find('input:text, input:password, input:file, input:hidden  , input[name="email"],select, textarea')
-        .removeClass('is-invalid')
-        .removeClass('is-valid');
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // Error de formulario validacion
       if (xhr.status == 422) {
         // Elimina el mensaje de error de los campos que estan correctos
-        $('#formAddMaterial').find('strong[id]').text('');
+        $('#formAdd').find('strong[id]').text('');
         // Estilo de bootstrap para marcar que estan correctos los datos
-        $('#formAddMaterial')
+        $('#formAdd')
           .find('input:text, input:password, input:file, input:hidden  , input[name="email"],select, textarea')
           .removeClass('is-invalid')
           .addClass('is-valid');
@@ -77,7 +56,7 @@ function list_material() {
   // funtion_loader('show');
   const sendGetRequest = async () => {
     try {
-      const resp = await axios.get(base_url() + '/blindado-transporte/vehiculos/list');
+      const resp = await axios.get(base_url() + '/departamento/material/zody/list');
       console.log(resp.data);
       let table = '';
       if (resp.data == '') {
@@ -85,10 +64,9 @@ function list_material() {
           <table class="table" id="table1">
           <thead>
             <tr>
-            <th>#ID</th>
-            <th>SERIAL O PLACA</th>
-            <th> VEHÍCULO DE TRASPORTE SISTEMA BLINDADOS Y SISTEMAS DE ARTILLERÍA</th>
-            <th>TIPO</th>
+              <th>#ID</th>
+              <th>NOMBRE</th>
+              <th>ESTADO</th>
               <th class="text-end"></th>
             </tr>
           </thead>
@@ -103,9 +81,8 @@ function list_material() {
         <thead>
           <tr>
             <th>#ID</th>
-            <th>SERIAL O PLACA</th>
-            <th> VEHÍCULO DE TRASPORTE SISTEMA BLINDADOS Y SISTEMAS DE ARTILLERÍA</th>
-            <th>TIPO</th>
+            <th>NOMBRE</th>
+            <th>ESTADO</th>
             <th class="text-end"></th>
           </tr>
         </thead>
@@ -116,10 +93,10 @@ function list_material() {
           table += `
               <tr>
               <td>#${resp.data[i].id}</td>
-              <td>${resp.data[i].placa}</td>
               <td>${resp.data[i].nombre}</td>
-              <td>${resp.data[i].modelo}</td>
-
+              <td>
+                <span class="badge bg-success">Activo</span>
+              </td>
               <td class="text-end">
                 <div class="btn-group mb-1">
                   <div class="dropdown">
@@ -179,8 +156,8 @@ function list_material() {
 function deletMaterial(id) {
   console.log(id);
   Swal.fire({
-    title: 'ELIMINAR VEHÍCULO',
-    text: '¿ Estas seguro que deseas eliminar este vehículo ?',
+    title: 'ELIMINAR MATERIAL',
+    text: '¿ Estas seguro que deseas eliminar este material ?',
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -191,7 +168,7 @@ function deletMaterial(id) {
     if (result.isConfirmed) {
       const sendGetRequest = async () => {
         try {
-          const resp = await axios.delete(base_url() + '/blindado-transporte/vehiculos/delet/' + id);
+          const resp = await axios.delete(base_url() + '/departamento/material/zody/delet/' + id);
           console.log(resp.data);
           list_material();
           Swal.fire({
@@ -212,12 +189,11 @@ function editMaterial(id) {
   console.log(id);
   const sendGetRequest = async () => {
     try {
-      const resp = await axios.get(base_url() + '/blindado-transporte/vehiculos/edit/' + id);
+      const resp = await axios.get(base_url() + '/departamento/material/zody/edit/' + id);
       console.log(resp.data);
       $('#id').val(resp.data.id);
       $('#nombre').val(resp.data.nombre);
-      $('#placa').val(resp.data.placa);
-      $('#modelo').val(resp.data.modelo);
+      $('#tipo_material_id').val(resp.data.tipo_material_id);
       $('#addModalMaterial').click();
     } catch (err) {
       // Handle Error Here

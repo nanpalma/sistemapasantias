@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
       SuperAdminSeeder::class,
       BrigadaSeeder::class,
       TiposArmaSeeder::class,
+      HospitalesSeeder::class,
     ]);
   }
 }

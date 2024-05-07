@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="{{ asset('assets_use/compiled/css/app-dark.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets_use/compiled/css/iconly.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets_use/extensions/sweetalert2/sweetalert2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets_use/extensions/@fortawesome/fontawesome-free/css/all.min.css') }}">
 <!-- Vendor Styles -->
 @yield('vendor-style')
 

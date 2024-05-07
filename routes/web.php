@@ -52,7 +52,17 @@ Route::middleware(['auth', 'verified',])->group(function () {
   Route::get('/blindado-transporte/vehiculoszosi/list', [App\Http\Controllers\DepTransporteController::class, 'list_vehiculo_zodi'])->name('transporte.vehiculoszodi.list');
   Route::delete('/blindado-transporte/vehiculoszodi/delet/{id}', [App\Http\Controllers\DepTransporteController::class, 'delete_vehiculo_zodi'])->name('transporte.vehiculoszodi.delete');
   Route::get('/blindado-transporte/vehiculoszodi/edit/{id}', [App\Http\Controllers\DepTransporteController::class, 'edit_vehiculo_zodi'])->name('transporte.vehiculoszodi.edit');
+
   /**_----------------------------------------End Blindado y Transporte_---------------------------------------- */
 
+
+  /**_----------------------------------------Sanidad ---------------------------------------- */
+  Route::get('/departamento/sanidad/gestion', [App\Http\Controllers\DepSanidadController::class, 'gestion'])->name('sanidad.gestion');
+  Route::get('/departamento/sanidad/gestion/views', [App\Http\Controllers\DepSanidadController::class, 'hospita_views'])->name('sanidad.gestion.views');
+  Route::get('/departamento/sanidad/sub_brigadas/list/{id}', [App\Http\Controllers\DepSanidadController::class, 'list_hospitales_selec'])->name('sanidad.material.list');
+  Route::post('/departamento/sanidad/gestion/store', [App\Http\Controllers\DepSanidadController::class, 'store_gestion_stock'])->name('sanidad.gestion.store');
+  Route::get('/departamento/sanidad/gestion/edit/{id}', [App\Http\Controllers\DepSanidadController::class, 'edit_stock_material'])->name('sanidad.gestion.edit');
+  Route::delete('/departamento/sanidad/gestion/delet_stock/{id}', [App\Http\Controllers\DepSanidadController::class, 'delete_material_stock'])->name('sanidad.gestion.delete');
+  /**_----------------------------------------End Sanidad_---------------------------------------- */
   Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });

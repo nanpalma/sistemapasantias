@@ -59,8 +59,8 @@
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="topbarUserDropdown">
-                        <li><a class="dropdown-item" href="#">My Account</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        {{-- <li><a class="dropdown-item" href="#">My Account</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li> --}}
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -80,7 +80,7 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item active ">
+                <li class="sidebar-item  {{ Route::is('dashboard-analytics') ? 'active' : '' }}">
                     <a href="{{ route('home') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
@@ -91,7 +91,8 @@
 
                 <li class="sidebar-title">Departamentos</li>
 
-                <li class="sidebar-item  has-sub">
+                <li
+                    class="sidebar-item    has-sub {{ Route::is(['armamento.list', 'armamento.gestion', 'armamento.gestion.views', 'armamentozody.list']) ? 'active ' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-collection-fill"></i>
                         <span>Armamento</span>
@@ -99,17 +100,18 @@
 
                     <ul class="submenu ">
 
-                        <li class="submenu-item  ">
+                        <li class="submenu-item   {{ Route::is('armamento.list') ? 'active ' : '' }}">
                             <a href="{{ route('armamento.list') }}" class="submenu-link">Materiales</a>
 
                         </li>
 
-                        <li class="submenu-item  ">
+                        <li
+                            class="submenu-item {{ Route::is(['armamento.gestion', 'armamento.gestion.views']) ? 'active ' : '' }} ">
                             <a href="{{ route('armamento.gestion') }}" class="submenu-link">Gestion</a>
 
                         </li>
 
-                        <li class="submenu-item  ">
+                        <li class="submenu-item  {{ Route::is('armamentozody.list') ? 'active ' : '' }}">
                             <a href="{{ route('armamentozody.list') }}" class="submenu-link">Materiales ZODI</a>
 
                         </li>
@@ -119,23 +121,25 @@
                 </li>
 
 
-                <li class="sidebar-item  has-sub">
+                <li
+                    class="sidebar-item  has-sub  {{ Route::is(['transporte.zodi.list', 'transporte.list', 'transporte.gestion', 'transporte.gestion.views']) ? 'active ' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
                         <span>Blindado y transporte</span>
                     </a>
 
                     <ul class="submenu ">
-                        <li class="submenu-item  ">
+                        <li class="submenu-item  {{ Route::is('transporte.zodi.list') ? 'active ' : '' }} ">
                             <a href="{{ route('transporte.zodi.list') }}" class="submenu-link">Vehículos ZODI</a>
 
                         </li>
-                        <li class="submenu-item  ">
+                        <li class="submenu-item  {{ Route::is('transporte.list') ? 'active ' : '' }} ">
                             <a href="{{ route('transporte.list') }}" class="submenu-link">Vehículos</a>
 
                         </li>
 
-                        <li class="submenu-item  ">
+                        <li
+                            class="submenu-item  {{ Route::is(['transporte.gestion', 'transporte.gestion.views']) ? 'active ' : '' }}">
                             <a href="{{ route('transporte.gestion') }}" class="submenu-link">Gestión </a>
 
                         </li>
@@ -147,36 +151,8 @@
 
                 </li>
 
-
-
-
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-grid-1x2-fill"></i>
-                        <span>Intendencia</span>
-                    </a>
-
-                    <ul class="submenu ">
-
-                        <li class="submenu-item  ">
-                            <a href="layout-default.html" class="submenu-link">Default Layout</a>
-
-                        </li>
-
-                        <li class="submenu-item  ">
-                            <a href="layout-vertical-1-column.html" class="submenu-link">1 Column</a>
-
-                        </li>
-
-
-
-                    </ul>
-
-
-                </li>
-
-
-                <li class="sidebar-item  has-sub">
+                <li
+                    class="sidebar-item  has-sub {{ Route::is(['sanidad.gestion', 'sanidad.gestion.views']) ? 'active ' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
                         <span>Sanidad</span>
@@ -184,8 +160,9 @@
 
                     <ul class="submenu ">
 
-                        <li class="submenu-item  ">
-                            <a href="layout-default.html" class="submenu-link">Default Layout</a>
+                        <li
+                            class="submenu-item {{ Route::is(['sanidad.gestion', 'sanidad.gestion.views']) ? 'active ' : '' }} ">
+                            <a href="{{ route('sanidad.gestion') }}" class="submenu-link">Gestion</a>
 
                         </li>
 
@@ -197,23 +174,7 @@
                 </li>
 
 
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-grid-1x2-fill"></i>
-                        <span>Alimentación</span>
-                    </a>
 
-                    <ul class="submenu ">
-
-                        <li class="submenu-item  ">
-                            <a href="layout-default.html" class="submenu-link">Default Layout</a>
-
-                        </li>
-
-                    </ul>
-
-
-                </li>
 
                 {{-- <li class="sidebar-title">Forms &amp; Tables</li>
 

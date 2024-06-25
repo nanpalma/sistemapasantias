@@ -193,12 +193,21 @@ function deletMaterial(id) {
         try {
           const resp = await axios.delete(base_url() + '/blindado-transporte/vehiculos/delet/' + id);
           console.log(resp.data);
-          list_material();
-          Swal.fire({
-            title: 'Eliminado!',
-            text: 'Material eliminado con éxito.',
-            icon: 'success'
-          });
+          if (resp.data.status==200) {
+            list_material();
+            Swal.fire({
+              title: 'Eliminado!',
+              text: 'Material eliminado con éxito.',
+              icon: 'success'
+            });
+          }else{
+            Swal.fire({
+              title: 'Error!',
+              text: resp.data.error,
+              icon: 'error'
+            });
+          }
+
         } catch (err) {
           // Handle Error Here
         }

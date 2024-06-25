@@ -126,8 +126,12 @@ class DepTransporteController extends Controller
   public function delete_vehiculo(Request $request)
   {
 
-    Vehiculo::where('id', $request['id'])->delete();
-    return response()->json(['success' => 'Vehículo Eliminado Correctamente.', 'status' => 200,], 201);
+    try {
+      Vehiculo::where('id', $request['id'])->delete();
+      return response()->json(['success' => 'Vehículo Eliminado Correctamente.', 'status' => 200,], 201);
+    } catch (\Exception $e) {
+      return response()->json(['error' => "Error al intentar eliminar el vehículo.", 'status' => 500], 200);
+    }
     // }
 
   }

@@ -3,8 +3,10 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
                 <div class="logo">
-                    <a href="index.html"><img src="{{ asset('assets_use/compiled/svg/logo.svg') }}" alt="Logo"
-                            srcset=""></a>
+                    {{-- <a href="{{ url('/') }}"><img src="{{ asset('assets_use/compiled/svg/logo.svg') }}" alt="Logo"
+                            srcset=""></a> --}}
+                    <a style="    font-size: 1.5vw;" href="{{ url('/') }}"><img style="width: 28%;     height: 20%;"
+                            src="{{ asset('img/zaodi_lara.jpg') }}" alt="Logo" srcset=""> ZODI</a>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -47,7 +49,9 @@
                         class="user-dropdown d-flex align-items-center dropend dropdown-toggle justify-content-between"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="avatar avatar-xl ">
-                            <img class="h-100" src="{{ asset('assets_use/compiled/jpg/2.jpg') }}" alt="Avatar">
+                            {{-- <img class="h-100" src="{{ asset('assets_use/compiled/jpg/2.jpg') }}" alt="Avatar"> --}}
+                            <img class="h-100" src="{{ asset('img/militar.png') }}" alt="Avatar">
+
                         </div>
                         <div class="text">
                             <h6 class="user-dropdown-name"> {{ Auth::user()->name }}</h6>

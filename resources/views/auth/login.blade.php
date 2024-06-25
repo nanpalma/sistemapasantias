@@ -99,14 +99,11 @@
     <script src="{{ asset('assets_use/static/js/initTheme.js') }}"></script>
     <div id="auth">
 
-        <div class="row h-100">
+        <div class="row ">
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
-                    <div class="auth-logo">
-                        <a href="index.html"><img src="{{ asset('assets_use/compiled/svg/logo.svg') }}"
-                                alt="Logo"></a>
-                    </div>
-                    <h1 class="auth-title">Iniciar Sesión</h1>
+
+                    <h1 class="auth-title text-dark">Iniciar Sesión</h1>
                     <p class="auth-subtitle mb-5">Inicie sesión con los datos que ingresó durante el registro.</p>
 
                     <form method="POST" action="{{ route('login') }}">
@@ -158,8 +155,9 @@
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-block">
-                <div id="auth-right">
-
+                <div class="text-center  bg-white">
+                    <img src="{{ asset('img/zaodi_lara.jpg') }}" class="mr-auto" alt="Logo de la empresa"
+                        srcset="">
                 </div>
             </div>
         </div>

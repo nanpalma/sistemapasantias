@@ -144,11 +144,12 @@ class DepArmamentoController extends Controller
 
   public function delete_material(Request $request)
   {
-
-    Materiales::where('id', $request['id'])->delete();
-    return response()->json(['success' => 'Material Eliminado Correctamente.', 'status' => 200,], 201);
-    // }
-
+    try {
+      Materiales::where('id', $request['id'])->delete();
+      return response()->json(['success' => 'Material Eliminado Correctamente.', 'status' => 200], 201);
+    } catch (\Exception $e) {
+      return response()->json(['error' => "Error al intentar eliminar el material.", 'status' => 500], 200);
+    }
   }
 
   public function delete_material_zody(Request $request)
